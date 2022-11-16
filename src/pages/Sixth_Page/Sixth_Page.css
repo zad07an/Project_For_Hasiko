@@ -1,0 +1,339 @@
+.sixth_page_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(45, 4, 4);
+}
+.sixth_page_container .cinema_container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.sixth_page_container .cinema_container .curtain {
+  width: 49%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgb(103, 4, 4);
+  z-index: 100;
+}
+.sixth_page_container .cinema_container .curtain .curtain_line {
+  width: 20px;
+  height: 100%;
+  background: rgb(0, 0, 0);
+}
+.sixth_page_container .cinema_container .curtain_1 {
+  position: absolute;
+  left: 0;
+  -webkit-animation: curtainLeftAnimation 3s linear alternate;
+          animation: curtainLeftAnimation 3s linear alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.sixth_page_container .cinema_container .curtain_2 {
+  position: absolute;
+  right: 0;
+  -webkit-animation: curtainRightAnimation 3s linear alternate;
+          animation: curtainRightAnimation 3s linear alternate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.sixth_page_container .cinema_container .ceiling {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  position: absolute;
+  top: 0;
+  background: rgb(56, 24, 24);
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  z-index: 999;
+}
+.sixth_page_container .cinema_container .ceiling .light {
+  width: 50px;
+  height: 20px;
+  border-radius: 50%;
+  background: yellow;
+  filter: drop-shadow(0 3px 10px yellow);
+}
+.sixth_page_container .cinema_container .screen_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.sixth_page_container .cinema_container .screen_container .screen {
+  width: 700px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-animation: screenStart;
+          animation: screenStart;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  transition: 0.3s ease-in-out;
+}
+.sixth_page_container .cinema_container .screen_container .screen .count_line_1 {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  -webkit-animation: countLine 1.5s infinite linear;
+          animation: countLine 1.5s infinite linear;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+  animation-delay: 6.5s;
+}
+.sixth_page_container .cinema_container .screen_container .screen .count_line_2 {
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  -webkit-animation: countLine 1.5s infinite linear;
+          animation: countLine 1.5s infinite linear;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+}
+.sixth_page_container .cinema_container .screen_container .screen .count_circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  position: absolute;
+  -webkit-animation: countLine 1.5s infinite linear;
+          animation: countLine 1.5s infinite linear;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+}
+.sixth_page_container .cinema_container .screen_container .screen .three {
+  position: absolute;
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0);
+  -webkit-animation-name: countstart;
+          animation-name: countstart;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 6.5s;
+          animation-delay: 6.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.sixth_page_container .cinema_container .screen_container .screen .two {
+  position: absolute;
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0);
+  -webkit-animation-name: countstart;
+          animation-name: countstart;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.sixth_page_container .cinema_container .screen_container .screen .one {
+  position: absolute;
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0);
+  -webkit-animation-name: countstart;
+          animation-name: countstart;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 9.5s;
+          animation-delay: 9.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes countCircle {
+  0% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  50% {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+}
+@keyframes countCircle {
+  0% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  50% {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes countLine {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  50% {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+@keyframes countLine {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  50% {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes countstart {
+  0% {
+    color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    color: rgb(0, 0, 0);
+  }
+  100% {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+@keyframes countstart {
+  0% {
+    color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    color: rgb(0, 0, 0);
+  }
+  100% {
+    color: rgba(0, 0, 0, 0);
+  }
+}
+.sixth_page_container .cinema_container .screen_container .screen img {
+  background-size: cover;
+  background-position: center;
+  -webkit-animation: movieOn;
+          animation: movieOn;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+  -webkit-animation-delay: 11.5s;
+          animation-delay: 11.5s;
+  transition: 0.3s ease-in-out;
+}
+.sixth_page_container .cinema_container .chair_container {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  background: rgb(24, 14, 14);
+  z-index: 999;
+}
+.sixth_page_container .cinema_container .chair_container .chairs {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.sixth_page_container .cinema_container .chair_container .chairs .chair {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, rgb(176, 11, 11), rgb(64, 11, 11));
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+@-webkit-keyframes curtainLeftAnimation {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -45%;
+  }
+}
+@keyframes curtainLeftAnimation {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -45%;
+  }
+}
+@-webkit-keyframes curtainRightAnimation {
+  from {
+    right: 0%;
+  }
+  to {
+    right: -45%;
+  }
+}
+@keyframes curtainRightAnimation {
+  from {
+    right: 0%;
+  }
+  to {
+    right: -45%;
+  }
+}
+@-webkit-keyframes screenStart {
+  from {
+    box-shadow: 0px 0px 0px;
+  }
+  to {
+    box-shadow: 0 0 10px rgb(230, 230, 230), 0 0 20px rgb(230, 230, 230);
+    background: rgba(208, 208, 208, 0.84);
+    transition: 0.3s linear;
+  }
+}
+@keyframes screenStart {
+  from {
+    box-shadow: 0px 0px 0px;
+  }
+  to {
+    box-shadow: 0 0 10px rgb(230, 230, 230), 0 0 20px rgb(230, 230, 230);
+    background: rgba(208, 208, 208, 0.84);
+    transition: 0.3s linear;
+  }
+}
+@-webkit-keyframes movieOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transition: 0.3s linear;
+  }
+}
+@keyframes movieOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transition: 0.3s linear;
+  }
+}/*# sourceMappingURL=Sixth_Page.css.map */

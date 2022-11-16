@@ -1,0 +1,21 @@
+.second_page_contaienr {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.second_page_contaienr .second_page_button {
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  border: none;
+  border-radius: 10px;
+  background: #DB5461;
+  color: #FDE1AF;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}/*# sourceMappingURL=Second_Page.css.map */

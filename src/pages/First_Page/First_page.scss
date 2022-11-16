@@ -1,0 +1,348 @@
+.first_page_container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f78ca9;
+
+    
+
+    .link_box {
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+
+        .link {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .heart {
+                color: #f5e3eb;
+                animation: arrow 3s linear alternate infinite;
+            }
+            
+            p {
+                font-size: 40px;
+                font-weight: 500;
+                color: rgb(255, 230, 230);
+            }
+
+        }
+
+        .name {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: .3s linear;
+
+            p {
+                font-size: 60px;
+                color: #cd3860;
+            }
+        }
+    }
+}
+
+@keyframes arrow {
+    from {
+      bottom: 5%;
+    }
+    to {
+      bottom: 20%;
+    }
+  }
+
+$BG: #f8dee9;
+$PUDDING: #f4d37c;
+$PUDDING_CARAMEL: #834c0e;
+$CREAM: #fff3e5;
+$CHERRY: #eb3939;
+$EYE: #323232;
+$MOUSE: #323232;
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@mixin prefixes($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+    #{$prefix}#{$property}: $value;
+  }
+}
+
+$WIDTH: 500;
+$HEIGHT: 500;
+
+.dessert {
+  position: absolute;
+}
+
+.pudding {
+  $base: &;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  top: -200px;
+
+  &__part {
+    position: absolute;
+    width: 150px;
+    height: 120px;
+    background: $PUDDING;
+    transform-origin: bottom;
+    z-index: 100;
+    &:before, &:after {
+      top: 0;
+      width: 0;
+      height: 0;
+      border-top: 120px solid transparent;
+      border-bottom: 0 solid transparent;
+    }
+
+    &:before {
+      right: -10px;
+      border-left: 10px solid $PUDDING;
+    }
+    &:after {
+      left: -10px;
+      border-right: 10px solid $PUDDING;
+    }
+  }
+  &__cream {
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    width: 45px;
+    height: 15px;
+    background: $CREAM;
+    border-radius: 50%;
+    z-index: 10;
+    @include prefixes(transform, scale(1.5));
+
+    &:before {
+      top: -8px;
+      left: 7px;
+      width: 30px;
+      height: 15px;
+      background: $CREAM;
+      border-radius: 50%;
+    }
+    &:after {
+      top: -18px;
+      left: 15px;
+      height: 25px;
+      width: 15px;
+      background: $CREAM;
+      border-radius: 80% 10% 55% 50%/55% 10% 80% 50%;
+      @include prefixes(transform, rotate(-40deg));
+    }
+  }
+  &__cherry {
+    position: absolute;
+    top: -20px;
+    left: 88px;
+    width: 25px;
+    height: 25px;
+    z-index: 10;
+    border-radius: 50%;
+    background: $CHERRY;
+    &:before {
+      top: -8px;
+      left: 11px;
+      width: 12px;
+      height: 17px;
+      border-radius: 50%;
+      border-left: 2px solid #323232;
+      background: transparent;
+      @include prefixes(transform, rotate(37deg));
+    }
+  }
+  &__head {
+    position: absolute;
+    top: -18px;
+    width: 150px;
+    height: 40px;
+    border-radius: 50%;
+    background: $PUDDING_CARAMEL;
+  }
+  &__bottom {
+    position: absolute;
+    bottom: -25px;
+    left: -10px;
+    width: 170px;
+    height: 45px;
+    border-radius: 50%;
+    background: $PUDDING;
+  }
+  &__eye {
+    position: absolute;
+    width: 55px;
+    height: 20px;
+    top: 40px;
+    left: 44px;
+    &:before,
+    &:after {
+      background: $EYE;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+    }
+    &:before {
+      left: 0;
+      @include prefixes(transform, rotate(225deg));
+    }
+    &:after {
+      right: 0;
+      @include prefixes(transform, rotate(45deg));
+    }
+  }
+  &__mouse {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    top: 60px;
+    left: 63px;
+    border-bottom: 2px solid $MOUSE;
+    border-radius: 50%;
+    background: transparent;
+  }
+  &__sara {
+    position: absolute;
+    bottom: -8px;
+    left: -35px;
+    width: 220px;
+    height: 45px;
+    border-radius: 50%;
+    z-index: -1;
+    background: #d4d2d2;
+    overflow: hidden;
+    &:before {
+      bottom: 4px;
+      left: -7px;
+      width: 220px;
+      height: 45px;
+      border-radius: 50%;
+      background: #fff;
+    }
+  }
+  &:hover {
+    #{$base} {
+      &__part {
+        @include animation(skew 2.3s linear);
+      }
+      &__eye {
+        &:before,
+        &:after {
+          background: transparent;
+          border-radius: 0;
+          width: 5px;
+          height: 5px;
+          border-left: 3px solid $EYE;
+          border-bottom: 3px solid $EYE;
+        }
+      }
+      &__mouse {
+        &:before,
+        &:after {
+          background: #f5e3eb;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          top: -10px;
+        }
+        &:before {
+          left: -40px;
+        }
+        &:after {
+          right: -40px;
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(skew) {
+  0% {
+    @include prefixes(transform, skewX(0));
+  }
+  5% {
+    @include prefixes(transform, skewX(5deg));
+  }
+  10% {
+    @include prefixes(transform, skewX(-4deg));
+  }
+  15% {
+    @include prefixes(transform, skewX(3deg));
+  }
+  20% {
+    @include prefixes(transform, skewX(-2deg));
+  }
+  25% {
+    @include prefixes(transform, skewX(0.9deg));
+  }
+  30% {
+    @include prefixes(transform, skewX(-0.6deg));
+  }
+  35% {
+    @include prefixes(transform, skewX(0.3deg));
+  }
+  40% {
+    @include prefixes(transform, skewX(-0.2deg));
+  }
+  45% {
+    @include prefixes(transform, skewX(0.1deg));
+  }
+  50% {
+    @include prefixes(transform, skewX(0));
+  }
+}
+
+// base
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: $BG;
+}
+
+* {
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+  }
+  &:hover {
+    z-index: 10;
+  }
+}
+
