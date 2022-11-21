@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: #f78ca9;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../../assets/cake_bg.jpg");
 }
 .fourth_page_container .fourth_page_buttons {
   height: 300px;
@@ -14,13 +14,15 @@
   gap: 40px;
 }
 .fourth_page_container .fourth_page_buttons button {
-  min-width: 150px;
-  height: 40px;
+  min-width: 200px;
+  height: 50px;
   border: none;
   background: #DB5461;
   color: #FDE1AF;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
   cursor: pointer;
 }
 .fourth_page_container .yoga {
@@ -52,7 +54,7 @@
   width: 200px;
   height: 25px;
   border-radius: 50%;
-  background: rgb(53, 53, 53);
+  background: rgb(27, 27, 27);
   box-shadow: 0 0 10px black;
 }
 @-webkit-keyframes yogababa {

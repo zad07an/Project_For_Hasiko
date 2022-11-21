@@ -1,7 +1,26 @@
-import React from "react";
-import './Sixth_Page.css'
+import React, { useEffect, useRef, useState } from "react";
+import video from "../../assets/video.mp4";
+import audio from "../../assets/audio.mp3";
+import "./Sixth_Page.css";
 
 export default function Sixth_Page() {
+  const [showVideo, setShowVideo] = useState(false);
+  const audioRef = useRef();
+
+  const playAudio = async () => {
+    await audioRef.current.play();
+  };
+
+  useEffect(() => {
+    let id = setTimeout(() => {
+      setShowVideo(!showVideo);
+      playAudio();
+    }, 6000);
+    return () => {
+      clearTimeout(id);
+    };
+  }, []);
+
   return (
     <div className="sixth_page_container">
       <div className="cinema_container">
@@ -41,27 +60,60 @@ export default function Sixth_Page() {
         </div>
         <div className="screen_container">
           <div className="screen">
-            <div className="count_line_1"></div>
-            <div className="count_line_2"></div>
-            <div className="count_circle"></div>
-            <div class="three">3</div>
-            <div class="two">2</div>
-            <div class="one">1</div>
-            <img src="https://images.pexels.com/photos/6479563/pexels-photo-6479563.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+            {showVideo ? (
+              <>
+                <video
+                  autoPlay
+                  type="video/mp4"
+                  width="100%"
+                  height="100%"
+                  className="video"
+                >
+                  <source src={video} type="video/mp4"></source>
+                </video>
+              </>
+            ) : null}
+            {/* <audio ref={audioRef}>
+              <source src={audio} />
+            </audio> */}
           </div>
         </div>
         <div className="chair_container">
           <div className="chairs">
-            <div className="chair chair_1"></div>
-            <div className="chair chair_2"></div>
-            <div className="chair chair_3"></div>
-            <div className="chair chair_4"></div>
-            <div className="chair chair_5"></div>
-            <div className="chair chair_6"></div>
+            <div className="chair chair_1">
+              <div>
+                <p>1</p>
+              </div>
+            </div>
+            <div className="chair chair_2">
+              <div>
+                <p>2</p>
+              </div>
+            </div>
+            <div className="chair chair_3">
+              <div>
+                <p>3</p>
+              </div>
+            </div>
+            <div className="chair chair_4">
+              <div>
+                <p>4</p>
+              </div>
+            </div>
+            <div className="chair chair_5">
+              <div>
+                <p>5</p>
+              </div>
+            </div>
+            <div className="chair chair_6">
+              <div>
+                <p>6</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-        {/* <div class="cinema-container">
+      {/* <div class="cinema-container">
           <div class="screen">
             <div class="three">3</div>
             <div class="two">2</div>
@@ -114,7 +166,6 @@ export default function Sixth_Page() {
 
           <div class="layer"></div>
         </div> */}
-
     </div>
   );
 }

@@ -30,11 +30,35 @@ body {
                 width: 344px;
             }
         }
-        &_basket {
+        &ui_basket {
             color: #de467c;
             position: relative;
             top: -6px;
             text-align: right;
+
+            img {
+                width: 50px;
+                height: 50px;
+                background-size: cover;
+                position: absolute;
+                right: 0;
+            }
+        }
+        .ui_basket {
+            height: 120px;
+            color: #de467c;
+            // position: relative;
+            top: -6px;
+            text-align: right;
+
+            .logo {
+                width: 80px;
+                height: 80px;
+                background-size: cover;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
         }
         &_inner {
             height: 340px;
@@ -187,6 +211,7 @@ body {
                     opacity: 1;
                     left: 0px;
                     transition: all .5s .50s cubic-bezier(0.175, 1.605, 0.455, 0.920);
+                    font-size: 18px;
                 }
                 input[type="radio"]:checked + label .ui_inner__slider .slide_inner__right input {
                     position: relative;

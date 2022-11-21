@@ -10,7 +10,7 @@ export default function Fourth_Page({modalIsActive, showModal, setShowModal}) {
     const nextPage = () => {
         modalIsActive();
         setTimeout(() => {
-            navigate('/fifth-page')
+            navigate('/fourth-page')
             setShowModal(false)
         },2500)
     }
@@ -22,10 +22,10 @@ export default function Fourth_Page({modalIsActive, showModal, setShowModal}) {
             <button onClick={nextPage}>Անցնել առաջ՞</button>
             <button onClick={nextPage}>Թե չանցնել՞</button>
         </div>
-        <div class="yoga">
+        <div className="yoga">
             {/* <h1 align="center">Dhyana Mudra</h1> */}
-            <div class="baba"></div>
-            <div class="footer"></div>
+            <div className="baba"></div>
+            <div className="footer"></div>
         </div>
     </div>
   )

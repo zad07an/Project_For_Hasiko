@@ -13,16 +13,16 @@ export default function First_Page() {
   return (
     <div className='first_page_container'>
         <div className='link_box'>
-          <Link to='/second-page' class="pudding">
-            <div class="pudding__part" onMouseEnter={hoverOn} onMouseLeave={hoverOff}>
-              <div class="pudding__head"></div>
-              <div class="pudding__eye"></div>
-              <div class="pudding__mouse"></div>
-              <div class="pudding__cream"></div>
-              <div class="pudding__cherry"></div>
-              <div class="pudding__bottom"></div>
+          <Link to='/second-page' className="pudding">
+            <div className="pudding__part" onMouseEnter={hoverOn} onMouseLeave={hoverOff}>
+              <div className="pudding__head"></div>
+              <div className="pudding__eye"></div>
+              <div className="pudding__mouse"></div>
+              <div className="pudding__cream"></div>
+              <div className="pudding__cherry"></div>
+              <div className="pudding__bottom"></div>
             </div>
-            <div class="pudding__sara"></div>
+            <div className="pudding__sara"></div>
           </Link>
           <div className="link">
               <p className='heart'><TbArrowBigUpLines/></p>
